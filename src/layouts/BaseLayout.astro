@@ -1,0 +1,42 @@
+---
+import Head from "../components/Head.astro";
+import Nav from "../components/Nav.astro";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Hadad Personal Site",
+  description = "The personal site of Hadad Dus Bwenge",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <Head title={title} description={description} />
+  </head>
+  <body class="gap-8">
+    <Nav />
+    <slot />
+    <!-- <Footer /> -->
+    <style is:global>
+      body {
+        background-image: var(--background--gradient);
+        height: 100vh;
+        padding: var(--gap-8);
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      p,
+      span, a {
+        color: var(--gray-50);
+      }
+    </style>
+  </body>
+</html>

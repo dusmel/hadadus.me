@@ -1,0 +1,60 @@
+---
+import Icon from "./Icon.astro";
+
+const menus: { label: string; href: string }[] = [
+  { label: "About", href: "/#about" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Contact", href: "/#contact" },
+];
+---
+
+<nav>
+  <div class="nav-items space-between">
+    <a href="/" class="site-title">
+      <Icon
+        icon="terminal-window"
+        color="var(--accent-gradient)"
+        size="1.6em"
+        gradient
+      />
+      Hadad Dus
+    </a>
+    <div class="menu">
+      <ul class="flex">
+        {
+          menus.map((menu, index) => (
+            <li class="menu-item">
+              <a href={menu.href}>
+                <span class="menu-item-number">0{index + 1}. </span>{menu.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  a {
+    --font-size: var(--fs-500);
+    text-decoration: none;
+    font-size: var(--font-size);
+    font-weight: var(--fw-bold);
+  }
+  .nav-items {
+  }
+  .menu ul {
+    list-style: none;
+    gap: var(--gap-8);
+  }
+
+  .menu-item a {
+    font-size: var(--fs-300);
+  }
+  .menu-item-number{
+    font-size: var(--fs-200);
+    color: #BA90C6;
+  }
+</style>

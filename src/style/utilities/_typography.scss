@@ -1,0 +1,19 @@
+@use "../variables/typography" as *;
+
+// font sizes classes
+@each $size-name, $size-value in $font-sizes {
+  .fs-#{$size-name} {
+    font-size: $size-value;
+  }
+}
+
+// font weight classes
+@each $weight-name, $weight-value in $font-weights {
+  .fw-#{$weight-name} {
+    font-weight: $weight-value;
+  }
+}
+
+.text-center {
+  text-align: center;
+}

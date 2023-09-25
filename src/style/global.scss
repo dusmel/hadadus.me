@@ -86,9 +86,13 @@
   );
   --background-image-temp: linear-gradient(
     109.6deg,
-    rgba(15, 2, 2, 1) 11.2%,
-    rgba(36, 163, 190, 1) 91.1%
+    rgba(15, 2, 2, 1) 65.2%,
+    rgba(36, 163, 190, 1) 93.1%
   );
+  --background-image-temp1:  radial-gradient( circle farthest-corner at 50% 30%,  rgb(65, 21, 74) 0%, rgb(22, 1, 22) 50%)
+  ;
+  --background-image-temp2: radial-gradient( circle farthest-corner at 10% 20%,  rgba(100,43,115,1) 0%, rgba(4,0,4,1) 90% );
+
   --gradient-stop-1: var(--accent-light);
 	--gradient-stop-2: var(--accent-regular);
 	--gradient-stop-3: var(--accent-dark);

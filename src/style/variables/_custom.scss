@@ -1,0 +1,7 @@
+@use "functions";
+
+$container-max-width: 69rem;
+$container-min-padding: functions.size(6);
+
+$container-max-width-narrow: 40rem;
+$container-max-width-wide: 75rem;

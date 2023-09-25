@@ -1,0 +1,5 @@
+@use "colors" as *;
+
+$active-theme: $light;
+// allow people to change the theme 
+$enable-media-query-dark-mode: true

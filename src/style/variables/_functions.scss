@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "sizes" as *;
+
+
+@function size($size) {
+  @debug "getting here";
+  @if map.has-key($sizes, $size) {
+    @return map.get($sizes, $size);
+  } @else {
+    @error '$sizes does not have that size!';
+  }
+}

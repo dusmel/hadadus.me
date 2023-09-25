@@ -1,0 +1,64 @@
+@use "../variables" as *;
+
+.mx-auto {
+  margin-inline: auto;
+}
+.my-auto {
+  margin-block: auto;
+}
+.px-auto {
+  padding-inline: auto;
+}
+.py-auto {
+  padding-block: auto;
+}
+
+@each $size-name, $size-value in $sizes {
+  .m {
+    &-#{$size-name} {
+      margin: $size-value;
+    }
+    &t-#{$size-name} {
+      margin-top: $size-value;
+    }
+    &b-#{$size-name} {
+      margin-bottom: $size-value;
+    }
+    &y-#{$size-name} {
+      margin-block: $size-value;
+    }
+    &r-#{$size-name} {
+      margin-right: $size-value;
+    }
+    &l-#{$size-name} {
+      margin-left: $size-value;
+    }
+    &x-#{$size-name} {
+      margin-inline: $size-value;
+    }
+  }
+  .p {
+    &-#{$size-name} {
+      padding: $size-value;
+    }
+    &t-#{$size-name} {
+      padding-top: $size-value;
+    }
+    &b-#{$size-name} {
+      padding-bottom: $size-value;
+    }
+    &y-#{$size-name} {
+      padding-block: $size-value;
+    }
+    &r-#{$size-name} {
+      padding-right: $size-value;
+    }
+    &l-#{$size-name} {
+      padding-left: $size-value;
+    }
+    &x-#{$size-name} {
+      padding-inline: $size-value;
+    }
+  }
+}
+

@@ -1,0 +1,74 @@
+// use https://uicolors.app/create to generate clean shades
+
+//  === Primary ===
+$color-primary-200: hsl(228, 39%, 23%);
+$color-primary-400: hsl(228, 39%, 23%);
+$color-primary-700: hsl(228, 39%, 23%);
+
+//  === Accent ===
+$color-accent-200: hsl(13, 100%, 96%);
+$color-accent-400: hsl(12, 88%, 59%);
+$color-accent-700: hsl(12, 70%, 39%);
+
+//  === Neutral ===
+$color-neutral-50: hsl(210, 40%, 98%);
+$color-neutral-100: hsl(210, 40%, 96%);
+$color-neutral-200: hsl(214, 32%, 91%);
+$color-neutral-300: hsl(213, 27%, 84%);
+$color-neutral-400: hsl(215, 20%, 65%);
+$color-neutral-500: hsl(215, 16%, 47%);
+$color-neutral-600: hsl(215, 19%, 35%);
+$color-neutral-700: hsl(215, 25%, 27%);
+$color-neutral-700: hsl(215, 25%, 27%);
+$color-neutral-800: hsl(217, 33%, 17%);
+$color-neutral-900: hsl(0 0% 0%);
+
+$light: (
+  "neutral": (
+    "50": $color-neutral-50,
+    "100": $color-neutral-100,
+    "200": $color-neutral-200,
+    "300": $color-neutral-300,
+    "400": $color-neutral-400,
+    "500": $color-neutral-500,
+    "600": $color-neutral-600,
+    "700": $color-neutral-700,
+    "800": $color-neutral-800,
+    "900": $color-neutral-900,
+  ),
+  "primary": (
+    "200": $color-primary-200,
+    "400": $color-primary-400,
+    "700": $color-primary-700,
+  ),
+  "accent": (
+    "200": $color-accent-200,
+    "400": $color-accent-400,
+    "700": $color-accent-700,
+  ),
+);
+
+$dark: (
+  "neutral": (
+    "50": $color-neutral-50,
+    "100": $color-neutral-100,
+    "200": $color-neutral-200,
+    "300": $color-neutral-300,
+    "400": $color-neutral-400,
+    "500": $color-neutral-500,
+    "600": $color-neutral-600,
+    "700": $color-neutral-700,
+    "800": $color-neutral-800,
+    "900": $color-neutral-900,
+  ),
+  "primary": (
+    "200": $color-primary-200,
+    "400": $color-primary-400,
+    "700": $color-primary-700,
+  ),
+  "accent": (
+    "200": $color-accent-200,
+    "400": $color-accent-400,
+    "700": $color-accent-700,
+  ),
+);

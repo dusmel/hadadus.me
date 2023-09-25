@@ -1,0 +1,18 @@
+@use "../variables/mixins" as *;
+
+.even-columns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  // if the default is always to fill the children on mobile then & > * { width: 100% }
+
+  @include screen(laptop) {
+    & > * {
+      flex: 1;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+  }
+}
+

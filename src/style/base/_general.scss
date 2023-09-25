@@ -1,0 +1,23 @@
+@use "../variables/" as *;
+
+
+
+body {
+  font-family: $ff-body;
+  font-weight: $fw-regular;
+  font-size: $fs-body;
+  color: $color-neutral-800;
+  background-color: $color-neutral-100;
+  // line-height: $body-line-height;
+}
+
+$link-color: $color-accent-700;
+$link-color-hover: $color-accent-400;
+
+a {
+  color: $link-color;
+}
+
+a:is(:hover, :focus) {
+  color: $link-color-hover;
+}

@@ -1,0 +1,26 @@
+@use "sass:meta"; // to check if the type of the param is a number size not a type of screen
+@use "sass:math"; // to check if passed size has a unit
+@use "sass:map";
+@use "breakpoints" as *;
+
+
+@mixin screen($size) {
+  // check if size exist in our list of sizes
+  @if map.has-key($breakpoints, $size) {
+    // get the actual size
+    $breakpoint: map-get($breakpoints, $size);
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if meta.type-of($size) == number {
+    @if math.is-unitless($size) {
+      @error 'when using a number with @mq() make sure to include a unit';
+    } @else {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'the keyword #{$size} is not in the $breakpoints map';
+  }
+}

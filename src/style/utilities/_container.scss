@@ -1,0 +1,22 @@
+@use "../variables/custom" as *;
+
+
+  .container {
+    --padding: #{$container-min-padding};
+    --max-width: #{$container-max-width};
+
+    width: min(var(--max-width), 100% - var(--padding));
+    margin-inline: auto;
+
+
+    &.container-narrow {
+      --max-width: #{$container-max-width-narrow};
+    }
+    &.container-wide {
+      --max-width: #{$container-max-width-wide};
+    }
+    &.container-bleed {
+      --max-width: 100%;
+    }
+  }
+

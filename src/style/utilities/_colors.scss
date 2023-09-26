@@ -5,11 +5,11 @@
 @each $color, $shade-map in $active-theme {
   @each $shade, $value in $shade-map {
     .text-#{$color}-#{$shade} {
-      color: var(--#{$color}-#{$shade});
+      color: var(--color-#{$color}-#{$shade});
     }
 
     .bg-#{$color}-#{$shade} {
-      background-color: var(--#{$color}-#{$shade});
+      background-color: var(--color-#{$color}-#{$shade});
     }
   }
 }

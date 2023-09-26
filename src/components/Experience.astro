@@ -1,0 +1,49 @@
+---
+import { getCollection, getEntry } from "astro:content";
+
+const experiences = await getCollection("experience");
+console.log(experiences);
+---
+
+<section class="my-13">
+  <h2>Experience</h2>
+  <div class="flex wrap gap-12">
+    {
+      experiences.map(({ data }) => (
+        <div class="experience-card">
+          <div class="flex">
+            <h5>{data.title}</h5>
+            <span>{data.date}</span>
+          </div>
+          <ul>
+            {data.description?.map((jobDescritop) => (
+              <li>{jobDescritop}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+  <div class="flex center pt-10 pb-13">
+    <button>Check more</button>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../style/variables/mixins" as *;
+
+  .experience-card {
+    width: 100%;
+
+    @include screen(laptop) {
+      width: 45%;
+    }
+  }
+
+  p, li {
+      font-size: small;
+    }
+  
+
+
+</style>

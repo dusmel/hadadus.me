@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import Personna from "@assets/persona.svg";
+import SVG from "./SVG.astro";
+---
+
+<main>
+  <section>
+    <div class="even-columns">
+      <div class="intro flow">
+        <p>
+          Hi, I'm Hadad ✋🏼 a software Mentat with a passion for translating
+          instructions to computers. If you are up for it let’s build a kind,
+          smarter, faster, and more connected future together. Welcome to my
+          digital realm! ✨ 🚀 This is the way.
+        </p>
+        <div class="flex">
+          <button>Let's talk</button>
+          <a href="_blank">Resume :icon for link</a>
+        </div>
+      </div>
+      <div>
+        <SVG icon="persona" size="400" height={600} width={600} />
+        <!-- <img src={Personna.src} alt=""> -->
+      </div>
+    </div>
+  </section>
+</main>

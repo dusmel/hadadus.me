@@ -1,5 +1,5 @@
 ---
-import Icon from "./Icon.astro";
+import Icon from "./SVG.astro";
 
 const menus: { label: string; href: string }[] = [
   { label: "About", href: "/#about" },
@@ -9,34 +9,40 @@ const menus: { label: string; href: string }[] = [
 ];
 ---
 
-<nav>
-  <div class="nav-items space-between">
-    <a href="/" class="site-title">
+<div class="header py-5 mb-12">
+  <div class="even-columns">
+    <a href="/" class="site-title flex">
       <Icon
         icon="terminal-window"
         color="var(--accent-gradient)"
         size="1.6em"
         gradient
       />
-      Hadad Dus
+      <span>Hadad Dus</span>
     </a>
-    <div class="menu">
-      <ul class="flex flow">
+    <nav>
+      <ul class="flex center">
         {
           menus.map((menu, index) => (
             <li class="menu-item">
               <a href={menu.href}>
-                <span class="menu-item-number text-accent-400">0{index + 1}. </span>{menu.label}
+                <span class="menu-item-number text-accent-400">
+                  0{index + 1}.{" "}
+                </span>
+                {menu.label}
               </a>
             </li>
           ))
         }
       </ul>
-    </div>
+    </nav>
+    <button>Github</button>
   </div>
-</nav>
+</div>
 
 <style>
+
+
   a {
     --font-size: var(--fs-500);
     text-decoration: none;
@@ -53,8 +59,8 @@ const menus: { label: string; href: string }[] = [
   .menu-item a {
     font-size: var(--fs-300);
   }
-  .menu-item-number{
+  .menu-item-number {
     font-size: var(--fs-200);
-    color: #BA90C6;
+    color: #ba90c6;
   }
 </style>

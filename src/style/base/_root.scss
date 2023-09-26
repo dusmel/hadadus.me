@@ -1,15 +1,16 @@
 @use "../variables/colors";
 @use "../variables/theme" as *;
 @use "../variables/sizes" as *;
+@use "../variables/mixins" as *;
 
 :root {
 
+  @include set-theme-colors(colors.$dark);
 
-  @each $color, $shade-map in $active-theme {
-    @each $shade, $value in $shade-map {
-      --#{$color}-#{$shade}: #{$value};
-    }
+  &[data-theme=light] {
+   @include set-theme-colors(colors.$light)
   }
+  
 
   @if ($enable-media-query-dark-mode) {
     @media (prefers-color-scheme: dark) {
@@ -20,4 +21,6 @@
       }
     }
   }
+
+  
 }

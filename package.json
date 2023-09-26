@@ -13,10 +13,10 @@
     "@astrojs/tailwind": "^5.0.0",
     "astro": "^3.1.1",
     "astro-purgecss": "^3.2.1",
-    "purgecss": "^5.0.0",
-    "sass": "^1.68.0"
+    "purgecss": "^5.0.0"
   },
   "devDependencies": {
+    "sass": "^1.68.0",
     "typescript": "latest"
   }
 }

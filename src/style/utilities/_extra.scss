@@ -1,0 +1,39 @@
+@use "../variables/sizes" as *;
+
+// === Layout ===
+.flex {
+  display: flex;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+@each $size, $value in $sizes {
+  .gap-#{$size} {
+    gap: $value;
+  }
+}
+
+
+// === text ===
+.text-center{
+  text-align: center;
+}

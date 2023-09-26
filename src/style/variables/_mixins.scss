@@ -24,3 +24,11 @@
     @error 'the keyword #{$size} is not in the $breakpoints map';
   }
 }
+
+@mixin set-theme-colors($theme-colors) {
+  @each $color, $shade-map in $theme-colors {
+    @each $shade, $value in $shade-map {
+      --color-#{$color}-#{$shade}: #{$value};
+    }
+  }
+}

@@ -17,3 +17,14 @@
 .text-center {
   text-align: center;
 }
+
+$lines: 1, 2, 3, 4, 5, 6;
+
+@each $line in $lines {
+  .line-clamp-#{$line} {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  }
+}

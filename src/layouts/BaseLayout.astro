@@ -2,6 +2,7 @@
 import type { propsToFilename } from "astro/assets/utils";
 import Head from "../components/Head.astro";
 import Nav from "../components/Nav.astro";
+import Footer from "@components/Footer.astro";
 
 export interface Props {
   title?: string;
@@ -25,7 +26,6 @@ const {
       <Nav />
       <slot />
     </div>
-    <!-- <Footer /> -->
-
+    <Footer />
   </body>
 </html>

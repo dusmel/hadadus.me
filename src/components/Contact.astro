@@ -1,0 +1,52 @@
+---
+// const contactInfo =
+type socialType = {
+  social: "github" | "twitter" | "linkedin" | "calendar" | "resume";
+  username: string;
+  link: string;
+};
+const socials: socialType[] = [
+  { social: "github", username: "dusmel", link: "https://github.com/dusmel" },
+  {
+    social: "twitter",
+    username: "hadad__",
+    link: "https://twitter.com/hadad__",
+  },
+  {
+    social: "linkedin",
+    username: "hadad bwenge",
+    link: "https://www.linkedin.com/in/hadad-bwenge-345ba7103/",
+  },
+  {
+    social: "calendar",
+    username: "cal.com/hadad",
+    link: "https://cal.com/hadad",
+  },
+  {
+    social: "resume",
+    username: "bit.ly/hadad-cv",
+    link: "https://bit.ly/hadad-cv",
+  },
+];
+---
+
+<section class="mt-10">
+  <h3>Contact - Socials</h3>
+  <div class="fs-xs fw-semi-bold flow" style="--flow-spacer: 1rem">
+    <div class="flex">
+      <span> :icon Email:</span>
+      <span> hadad.bwenge@gmail.com</span>
+      <a href="mailto:hadad.bwenge@gmail.com?subject=Let’s connect!"
+        >CONTACT ME</a
+      >
+    </div>
+    {
+      socials.map(({ social, username, link }) => (
+        <div class="socials | flex gap-3">
+          <span> :icon {social}:</span>
+          <a href={link}>{username} :icon</a>
+        </div>
+      ))
+    }
+  </div>
+</section>

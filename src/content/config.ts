@@ -19,10 +19,23 @@ const projectCollection = defineCollection({
     description: z.string(),
     link: z.string(),
     tags: z.array(z.string()).optional(),
+    sortOrder: z.number(),
+  }),
+});
+
+const skillsCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    languages: z.array(z.string()),
+    Framework: z.array(z.string()),
+    devops: z.array(z.string()),
+    testing: z.array(z.string()),
+    database: z.array(z.string()),
   }),
 });
 
 export const collections = {
   experience: experienceCollection,
   projects: projectCollection,
+  skills: skillsCollection,
 };

@@ -11,3 +11,9 @@ margin everywhere or even gap and flex, we can use flow classes */
 .flow-tight {
   --flow-spacer: functions.size(3);
 }
+.flow-medium {
+  --flow-spacer: functions.size(4);
+}
+.flow-large {
+  --flow-spacer: functions.size(8);
+}

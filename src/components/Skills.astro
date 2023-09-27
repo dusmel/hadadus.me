@@ -1,0 +1,33 @@
+---
+import { getCollection, getEntry } from "astro:content";
+
+const { data: skills } = await getEntry('skills', '2023'); 
+---
+
+<section class="mt-10">
+  <h2>Skills</h2>
+  <p class="fs-xs text-neutral-500 mb-8">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quis
+    minima molestias, blanditiis,
+  </p>
+
+  <div class="flow flow-normal">
+    {
+      Object.keys(skills).map((skill) => (
+        <div>
+          <h4>{skill}</h4>
+          <div class="flex fs-xs fw-semi-bold gap-4">
+            {skills[skill].map((name) => (
+              <div>
+                :icon
+                <span>{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style></style>

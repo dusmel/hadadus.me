@@ -1,0 +1,15 @@
+{
+  "languages": ["JS", "Ruby", "Typescript"],
+  "Framework": ["React", "Node/Express", "Rails", "Astro", "React native"],
+  "devops": [
+    "Docker",
+    "Digital Ocean",
+    "GCP",
+    "Github action CI/CD",
+    "Sentry",
+    "Circle CI",
+    "Heroku"
+  ],
+  "testing": ["vitest", "Jest", "Cypress", "Rspec", "capybara"],
+  "database": ["Postges", "Mysql", "redis"]
+}

@@ -32,3 +32,9 @@
     }
   }
 }
+
+@mixin theme($mode: dark) {
+  html[data-theme="#{$mode}"] & {
+    @content;
+  }
+}

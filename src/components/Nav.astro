@@ -1,5 +1,5 @@
 ---
-import Icon from "./SVG.astro";
+import Icon from "components/common/Icon.astro";
 
 const menus: { label: string; href: string }[] = [
   { label: "About", href: "/#about" },
@@ -7,42 +7,58 @@ const menus: { label: string; href: string }[] = [
   { label: "Projects", href: "/#projects" },
   { label: "Contact", href: "/#contact" },
 ];
+
 ---
 
 <div class="header py-5 mb-12">
-  <div class="even-columns">
+  <div class="flex justify-between">
     <a href="/" class="site-title flex">
       <Icon
         icon="terminal-window"
-        color="var(--accent-gradient)"
+        color="var(--color-accent-700)"
         size="1.6em"
-        gradient
       />
       <span>Hadad Dus</span>
     </a>
     <nav>
-      <ul class="flex center">
+      <ul class="flex center gap-3">
         {
           menus.map((menu, index) => (
             <li class="menu-item">
-              <a href={menu.href}>
+              <a href={menu.href} class="flex gap-1">
                 <span class="menu-item-number text-accent-400">
                   0{index + 1}.{" "}
                 </span>
-                {menu.label}
+                <span>{menu.label}</span>
               </a>
             </li>
           ))
         }
       </ul>
     </nav>
-    <button>Github</button>
+    <div class="flex gap-4 center">
+      <button>Github</button>
+      <div class="flex gap-2 bg-neutral-200 py-1 px-3 radius-flat">
+        <Icon
+          data-onclick="light"
+          type="button"
+          icon="light"
+          size="18"
+          color="var(--color-neutral-600)"
+        />
+        <Icon
+          data-onclick="dark"
+          type="button"
+          icon="dark"
+          size="18"
+          color="var(--color-neutral-600)"
+        />
+      </div>
+    </div>
   </div>
 </div>
 
 <style>
-
-
   a {
     --font-size: var(--fs-500);
     text-decoration: none;
@@ -63,4 +79,19 @@ const menus: { label: string; href: string }[] = [
     font-size: var(--fs-200);
     color: #ba90c6;
   }
+
+  ul {
+    list-style: none;
+  }
 </style>
+
+<script>
+  const buttons = document.querySelectorAll("[data-onclick]");
+  buttons.forEach((button) => {
+    button?.addEventListener("click", () => {
+      const mode = button.getAttribute("data-onclick") as "light" | "dark";
+      const htmlNode = document.querySelector("html[data-theme]");
+      htmlNode?.setAttribute("data-theme", mode)
+    });
+  });
+</script>

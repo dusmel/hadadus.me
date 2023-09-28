@@ -4,8 +4,8 @@ import { getCollection, getEntry } from "astro:content";
 const experiences = await getCollection("experience");
 ---
 
-<section class="my-13">
-  <h2>Experience</h2>
+<section class="mb-10">
+  <h2 class="fade">Experience</h2>
   <div class="flex wrap gap-12">
     {
       experiences.map(({ data }) => (

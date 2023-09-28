@@ -1,7 +1,14 @@
 @use "../variables/shadow" as *;
+@use "../variables/functions" as *;
+@use "../variables/typography" as *;
+@use "../variables/mixins";
 
 body {
   background-image: $background-image-temp1;
+
+  html[data-theme="light"] & {
+    background-image: $background-image-light;
+  }
   // -webkit-font-smoothing:
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

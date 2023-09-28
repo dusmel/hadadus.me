@@ -3,11 +3,22 @@
 /* gradient */
 $background--gradient: linear-gradient(
   135deg,
-  $color-accent-400,
-  65.3,
-  $color-accent-200,
-  93.2%
+  $color-primary-700 60%,
+  $color-primary-200 102%
 );
+
+$background--gradient-light: linear-gradient(
+  135deg,
+  rgba($color-neutral-200, 0.8) 10%,
+  $color-neutral-100 102%
+);
+
+$gradient-accent: linear-gradient(
+  135deg,
+  rgba($color-accent-400, 0.5) 2.3%,
+  $color-accent-200 40.2%
+);
+
 $accent-colorful-gradient: linear-gradient(
   45deg,
   $color-accent-200,
@@ -19,10 +30,14 @@ $background-image-temp: linear-gradient(
   rgba(15, 2, 2, 1) 65.2%,
   rgba(36, 163, 190, 1) 93.1%
 );
-$background-image-temp1: radial-gradient(
+$background-image-light: radial-gradient(
   circle farthest-corner at 50% 30%,
-  // rgb(65, 21, 74) 0%,
-  rgb(9, 25, 67) 0.2%,
+  rgba($color-neutral-200, 0.6) 5%,
+  $color-neutral-100 50%
+);
+$background-image-temp1: radial-gradient(
+  circle farthest-corner at 58% 11%,
+  rgb(15, 32, 78) 0.2%,
   rgb(6, 5, 36) 50%
 );
 $background-image-temp2: radial-gradient(
@@ -31,24 +46,6 @@ $background-image-temp2: radial-gradient(
   rgba(4, 0, 4, 1) 90%
 );
 
-
-// $gradient-stop-1: $accent-light;
-// $gradient-stop-2: $accent-regular;
-// $gradient-stop-3: $accent-dark;
-// $gradient-subtle: linear-gradient(150deg, $gray-900, 19%, $gray-999, 150%);
-// $gradient-accent: linear-gradient(
-//   150deg,
-//   $gradient-stop-1,
-//   $gradient-stop-2,
-//   $gradient-stop-3
-// );
-// $gradient-accent-orange: linear-gradient(
-//   150deg,
-//   #ca7879,
-//   $accent-regular,
-//   $accent-dar
-// );
-// $gradient-stroke: linear-gradient(180deg, $gray-900, $gray-700);
 
 /* Shadows */
 $shadow-sm: 0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),
@@ -59,3 +56,7 @@ $shadow-md: 0px 28px 11px rgba(9, 11, 17, 0.01),
 $shadow-lg: 0px 62px 25px rgba(9, 11, 17, 0.01),
   0px 35px 21px rgba(9, 11, 17, 0.05), 0px 16px 16px rgba(9, 11, 17, 0.1),
   0px 4px 9px rgba(9, 11, 17, 0.12);
+// $tw-shadow: var(--tw-shadow-colored);
+$shadow: 0 1px 3px 0 $color-accent-400, 0 1px 2px -1px $color-accent-400;
+$shadow-subtle: 0px 1px 10px 1px var(--color-neutral-500);
+$shadow-subtle-light: 0px 3px 20px 1px var(--color-neutral-300);

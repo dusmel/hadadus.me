@@ -2,29 +2,49 @@
 import { Image } from "astro:assets";
 import Personna from "@assets/persona.svg";
 import SVG from "./SVG.astro";
+import Icon from "@components/common/Icon.astro";
+import link from "@assets/icons/logo-link-chain-solid.svg?raw";
 ---
 
-<main>
-  <section>
-    <div class="even-columns">
-      <div class="intro flow">
-        <p>
-          Hi, I'm Hadad ✋🏼 
-          a software Mentat with a passion for translating
-          instructions to computers. If you are up for it let’s build a kind,
-          smarter, faster, and more connected future together. Welcome to my
-          digital realm! ✨ 🚀  
-          <span class="pl-4">▷ This is the way.</span>
-        </p>
-        <div class="flex">
-          <button>Let's talk</button>
-          <a href="_blank">Resume :icon for link</a>
-        </div>
-      </div>
-      <div>
-        <SVG icon="persona" size="400" height={600} width={600} />
-        <!-- <img src={Personna.src} alt=""> -->
+<section class="section-intro">
+  <div class="even-columns">
+    <div class="intro flow">
+      <p>
+        Hi, I'm Hadad ✋🏼 a software Mentat with a passion for translating
+        instructions to computers. If you are up for it let’s build a kind,
+        smarter, faster, and more connected future together. Welcome to my
+        digital realm! ✨ 🚀
+        <span class="pl-4">▷ This is the way.</span>
+      </p>
+      <div class="flex">
+        <button>Let's talk</button>
+        <a href="_blank" class="flex center gap-1"
+          >Resume <Icon
+            icon="link"
+            size="14"
+            data-class="main-illustration"
+          /></a
+        >
       </div>
     </div>
-  </section>
-</main>
+    <div class="illustration-container">
+      <Icon icon="persona" size="700px" color="var(--color-primary-700)" />
+      <!-- <img src={Personna.src} alt=""> -->
+    </div>
+  </div>
+</section>
+
+<style is:global lang="scss">
+  .section-intro {
+    min-height: calc(100vh - 200px);
+  }
+  .illustration-container {
+    position: relative;
+    // margin-bottom: 25rem;
+    svg {
+      position: absolute;
+      z-index: -1;
+      inset: -140px auto;
+    }
+  }
+</style>

@@ -12,15 +12,15 @@
   }
   
 
-  @if ($enable-media-query-dark-mode) {
-    @media (prefers-color-scheme: dark) {
-      @each $color, $shade-map in colors.$dark {
-        @each $shade, $value in $shade-map {
-          --#{$color}-#{$shade}: #{$value};
-        }
-      }
-    }
-  }
+  // @if ($enable-media-query-dark-mode) {
+  //   @media (prefers-color-scheme: dark) {
+  //     @each $color, $shade-map in colors.$dark {
+  //       @each $shade, $value in $shade-map {
+  //         --#{$color}-#{$shade}: #{$value};
+  //       }
+  //     }
+  //   }
+  // }
 
   
 }

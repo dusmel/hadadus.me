@@ -1,0 +1,40 @@
+@use "../variables/shadow" as *;
+@use "../variables/functions" as *;
+@use "../variables/typography" as *;
+@use "../variables/mixins";
+
+button, .button{
+  display: inline-block;
+  padding:  size(1) size(4);
+  border-radius: 0.3rem;
+  font-size: $fs-xs;
+  font-weight: $fw-semi-bold;
+  background-image: $background--gradient;
+  border: none;
+  color: var(--color-neutral-900);
+  cursor: pointer;
+
+  align-self: start;
+  box-shadow: $shadow-subtle;
+
+  @include mixins.theme(light) {
+    background: var(--color-neutral-100);
+    background-image: $background--gradient-light;
+    box-shadow: $shadow-subtle-light;
+    border: 1px solid var(--color-neutral-300);
+  }
+}
+
+button[data-type="flat"] {
+  padding: 0;
+  background: transparent;
+  background-image: transparent;
+  border: none;
+  box-shadow: none;
+
+  @include mixins.theme(light) {
+    background: transparent;
+    background-image: transparent;
+    border: none;
+  }
+}

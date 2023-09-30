@@ -7,7 +7,6 @@ const menus: { label: string; href: string }[] = [
   { label: "Projects", href: "/#projects" },
   { label: "Contact", href: "/#contact" },
 ];
-
 ---
 
 <div class="header py-5 mb-12">
@@ -37,7 +36,10 @@ const menus: { label: string; href: string }[] = [
       </ul>
     </nav>
     <div class="flex gap-4 center">
-      <button>Github</button>
+      <a target="_blank" href="https://github.com/dusmel" class="button-github | flex center gap-1 button"
+        ><Icon icon="github" size="15" />
+        Github
+      </a>
       <div class="flex gap-2 bg-neutral-200 py-1 px-3 radius-flat">
         <Icon
           data-onclick="light"
@@ -59,7 +61,11 @@ const menus: { label: string; href: string }[] = [
 </div>
 
 <style>
-  a {
+  .button-github {
+    line-height: 0;
+    padding-block: 0.35rem;
+  }
+  nav a {
     --font-size: var(--fs-500);
     text-decoration: none;
     font-size: var(--font-size);
@@ -91,7 +97,7 @@ const menus: { label: string; href: string }[] = [
     button?.addEventListener("click", () => {
       const mode = button.getAttribute("data-onclick") as "light" | "dark";
       const htmlNode = document.querySelector("html[data-theme]");
-      htmlNode?.setAttribute("data-theme", mode)
+      htmlNode?.setAttribute("data-theme", mode);
     });
   });
 </script>

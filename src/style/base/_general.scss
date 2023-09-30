@@ -8,6 +8,7 @@ body {
   font-size: $fs-body;
   color: var(--color-neutral-800);
   background-color: var(--color-neutral-100);
+  min-width: fit-content;
   // line-height: 1.25rem;
 }
 

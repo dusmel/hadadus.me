@@ -21,7 +21,7 @@ const {
   <head>
     <Head title={title} description={description} />
   </head>
-  <body class="gap-8" >
+  <body >
     <div class="container">
       <Nav />
       <slot />
@@ -29,3 +29,9 @@ const {
     <Footer />
   </body>
 </html>
+
+<style>
+  html {
+    min-width: 100%;
+  }
+</style>

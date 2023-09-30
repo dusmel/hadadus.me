@@ -14,6 +14,8 @@ import link from "@assets/icons/logo-link-chain-solid.svg?raw";
 import persona from "@assets/persona.svg?raw";
 import light from "@assets/icons/icon-light-filled-1.svg?raw";
 import dark from "@assets/icons/icon-dark.svg?raw";
+import github from "@assets/icons/logo-github.svg?raw";
+import githubFlat from "@assets/icons/icon-github-flat.svg?raw";
 
 export const iconPaths = {
   "terminal-window": `<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="m80 96 40 32-40 32m56 0h40"/><rect width="192" height="160" x="32" y="48" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.97" rx="8.5"/>`,
@@ -21,4 +23,6 @@ export const iconPaths = {
   link,
   light,
   dark,
+  github,
+  "github-flat": githubFlat,
 };

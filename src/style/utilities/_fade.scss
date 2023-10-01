@@ -1,4 +1,5 @@
 @use "../variables/colors" as *;
+@use "../variables/mixins" as *;
 
 *:where(.fade) {
   background-image: linear-gradient(
@@ -12,4 +13,11 @@
   color: transparent;
   -webkit-text-fill-color: transparent;
 
+  @include theme(light) {
+    background-image: linear-gradient(
+      130deg,
+      var(--color-primary-700) 0%,
+      rgba($color-neutral-400, 0.21) var(--fade--starter, 80%)
+    );
+  }
 }

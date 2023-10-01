@@ -7,22 +7,22 @@ const sortedProject = projects.sort(
 );
 ---
 
-<section class="mt-10">
+<section class="mt-10 section-glow">
   <h2 class="fade">Projects</h2>
   <p>I've hacked around few things worth looking at</p>
 
   <div class="flex wrap gap-10 mt-8">
     {
       sortedProject.map(({ data }) => (
-        <div class="project-card | pt-3">
-          <div class="flex justify-between  px-2">
+        <div class="project-card | pt-3 card-glow">
+          <div class="flex justify-between  px-3">
             <h4>{data.title}</h4>
             <span>:icon-link</span>
           </div>
-          <p class="description | my-5  px-2 line-clamp-3">
+          <p class="description | my-5  px-3 line-clamp-3">
             {data.description}
           </p>
-          <div class="flex gap-3 bg-neutral-100 py-1 px-2">
+          <div class="card-footer | flex gap-3 bg-neutral-100 py-1 px-3">
             <a href={data.link} class="flex">
               <span>:icon-github</span>
               Github
@@ -49,15 +49,20 @@ const sortedProject = projects.sort(
 
   .project-card {
     width: 100%;
-    border: 1px solid grey;
-    border-top: 3px solid var(--color-accent-700);
-    border-radius: 5px;
+    // border: 1px solid grey;
+    // border-top: 3px solid var(--color-accent-700);
+    // border-radius: 5px;
 
     h4 {
       font-size: 1.2rem;
     }
     @include mixins.screen(laptop) {
       width: 40%;
+    }
+
+    .card-footer{
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
 

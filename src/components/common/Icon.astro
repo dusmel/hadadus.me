@@ -1,8 +1,8 @@
 ---
-import { iconPaths } from "constants/IconPaths";
+import { iconPaths, type iconPathsType } from "constants/IconPaths";
 
 export interface Props {
-  icon: keyof typeof iconPaths;
+  icon: iconPathsType;
   color?: string;
   shade?: string;
   gradient?: boolean;
@@ -26,7 +26,7 @@ const properties = {
 
 const formattedPath = Object.keys(properties).reduce((path, current) => {
   return path.replaceAll(current, properties[current]);
-}, iconPaths[icon]);
+}, iconPaths[icon] || iconPaths.default);
 ---
 
 {

@@ -1,6 +1,13 @@
 {
   "languages": ["JS", "Ruby", "Typescript"],
-  "Framework": ["React", "Node/Express", "Rails", "Astro", "React native"],
+  "Framework": [
+    "React",
+    "Node/Express",
+    "Rails",
+    "Astro",
+    "React native",
+    "Rack"
+  ],
   "devops": [
     "Docker",
     "Digital Ocean",
@@ -11,5 +18,5 @@
     "Heroku"
   ],
   "testing": ["vitest", "Jest", "Cypress", "Rspec", "capybara"],
-  "database": ["Postges", "Mysql", "redis"]
+  "database": ["Postgres", "Mysql", "redis"]
 }

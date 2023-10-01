@@ -1,10 +1,19 @@
 ---
 import { getCollection, getEntry } from "astro:content";
+import Icon from "./common/Icon.astro";
+import { type iconPathsType } from "constants/IconPaths";
+
 
 const { data: skills } = await getEntry("skills", "2023");
+
+const getIconName = (name: string): iconPathsType => {
+  const formattedName = name?.toLowerCase()?.replaceAll(/\/|\s/g, "-");
+  return (formattedName || "js") as iconPathsType;
+}
+
 ---
 
-<section class="mt-10">
+<section class="mt-10 section-glow">
   <h2 class="fade inline-block">Skills</h2>
   <p class="fs-xs text-neutral-500 mb-8">
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quis
@@ -18,8 +27,8 @@ const { data: skills } = await getEntry("skills", "2023");
           <h4>{skill}</h4>
           <div class="flex fs-xs fw-semi-bold gap-4">
             {skills[skill].map((name) => (
-              <div>
-                :icon
+              <div class="flex gap-2 center tag">
+                <Icon icon={getIconName(name)} size="25" color="black" />
                 <span>{name}</span>
               </div>
             ))}

@@ -1,15 +1,91 @@
 @use "../variables/shadow" as *;
+@use "../variables/colors" as *;
 @use "../variables/functions" as *;
 @use "../variables/typography" as *;
-@use "../variables/mixins";
+@use "../variables/mixins" as *;
 
 body {
   background-image: $background-image-temp1;
 
   html[data-theme="light"] & {
-    background-image: $background-image-light;
+    background-image: $background-image-light-1;
+    // background: #ddd;
   }
   // -webkit-font-smoothing:
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.section-glow {
+  position: relative;
+  // isolation: isolate;
+}
+.section-glow::before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: -4rem;
+  top: -4rem;
+  background-image: linear-gradient(
+    45deg,
+    rgba($color-primary-400, 0.5),
+    rgba($color-primary-700, 1)
+  );
+  filter: blur(6rem);
+  width: 10rem;
+  height: 10rem;
+  z-index: -1;
+  border-radius: 10px;
+
+  @include theme(light) {
+    background-image:
+    linear-gradient(
+      315deg,
+      #f1f1f1 20%,
+      #fff 80%
+    );
+    backdrop-filter: blur(20rem);
+  }
+}
+
+.card-glow {
+  background-image: radial-gradient(
+      46.99% 43.05% at 2.58% 100%,
+      rgba($color-primary-700, 0.4) 0,
+      transparent 100%
+    ),
+    url("../assets/noise-extra.webp"),
+    radial-gradient(
+      55.18% 75.16% at 12.42% -3.42%,
+      rgba(112, 220, 211, 0.3) 0,
+      transparent 100%
+    );
+  background-size: 100%, 200px, 100%;
+  border-radius: size(3);
+  border: 1px solid rgba($color-neutral-50, 0.1);
+
+  backdrop-filter: blur(32px);
+  @include theme(light) {
+    background-image:
+    radial-gradient(
+      55.18% 75.16% at 12.42% -3.42%,
+      rgba($color-primary-400, 0.3) 0,
+      transparent 100%
+    );
+    border: 1px solid rgba($color-primary-200, 0.3);
+  }
+}
+
+.tag {
+  --shadow-color: var(--color-primary-400);
+  box-shadow: -1px 1px 4px 0px var(--shadow-color);
+  border-radius: 5px;
+  padding: 2px size(2);
+  line-height: 0;
+  border: none;
+  color: var(--color-neutral-900);
+
+  @include theme(light) {
+    --shadow-color: var(--color-primary-200);
+  }
 }

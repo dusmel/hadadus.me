@@ -35,17 +35,22 @@ $background-image-light: radial-gradient(
   rgba($color-neutral-200, 0.6) 5%,
   $color-neutral-100 50%
 );
-$background-image-temp1: radial-gradient(
-  circle farthest-corner at 58% 11%,
-  rgb(15, 32, 78) 0.2%,
-  rgb(6, 5, 36) 50%
+
+$background-image-light-1: radial-gradient(
+  circle farthest-corner at 50% 30%,
+  #e1e1e1 5%,
+  #f1f1f1 50%
 );
+$background-image-temp1: radial-gradient(
+    circle farthest-corner at 58% 11%,
+    rgba(15, 32, 78, .6) 0.2%,
+    rgb(6, 5, 36) 50%
+  );
 $background-image-temp2: radial-gradient(
   circle farthest-corner at 10% 20%,
   rgba(100, 43, 115, 1) 0%,
   rgba(4, 0, 4, 1) 90%
 );
-
 
 /* Shadows */
 $shadow-sm: 0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),

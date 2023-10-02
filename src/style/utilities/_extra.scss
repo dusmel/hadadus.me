@@ -35,6 +35,14 @@
   display: inline-block;
 }
 
+.hide{
+  display: none;
+}
+
+.block{
+  display: block;
+}
+
 @each $size, $value in $sizes {
   .gap-#{$size} {
     gap: $value;

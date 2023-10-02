@@ -3,14 +3,19 @@
 @use "sass:map";
 @use "breakpoints" as *;
 
-
 @mixin screen($size) {
   // check if size exist in our list of sizes
   @if map.has-key($breakpoints, $size) {
     // get the actual size
     $breakpoint: map-get($breakpoints, $size);
-    @media screen and (min-width: $breakpoint) {
-      @content;
+    @if $size == mobile or $size == mobile-tablet {
+      @media only screen and (max-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: $breakpoint) {
+        @content;
+      }
     }
   } @else if meta.type-of($size) == number {
     @if math.is-unitless($size) {

@@ -2,102 +2,218 @@
 import Icon from "components/common/Icon.astro";
 
 const menus: { label: string; href: string }[] = [
-  { label: "About", href: "/#about" },
-  { label: "Experience", href: "/#experience" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
 ];
 ---
 
-<div class="header py-5 mb-12">
-  <div class="flex justify-between">
-    <a href="/" class="site-title flex">
-      <Icon
-        icon="terminal"
-        color="white"
-        size="1.6em"
-      />
-      <span>Hadad Dus</span>
-    </a>
-    <nav>
-      <ul class="flex center gap-3">
-        {
-          menus.map((menu, index) => (
-            <li class="menu-item">
-              <a href={menu.href} class="flex gap-1">
-                <span class="menu-item-number text-accent-400">
-                  0{index + 1}.{" "}
-                </span>
-                <span>{menu.label}</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-    <div class="flex gap-4 center">
-      <a target="_blank" href="https://github.com/dusmel" class="button-github | flex center gap-1 button"
-        ><Icon icon="github" size="15" />
-        Github
+<div class="header py-4">
+  <div class="container">
+    <div  aria-hidden="true" aria-label="overlay" class="overlay" />
+    <div class="flex justify-between">
+      <a href="#" class="site-title | flex center gap-1 decoration-none">
+        <Icon icon="terminal" color="white" size="18px" />
+        <span class="fw-semi-bold text-accent-400">Hadad Dus</span>
       </a>
-      <div class="flex gap-2 bg-neutral-200 py-1 px-3 radius-flat">
+      <nav class="primary-navigation" id="primary-navigation">
+        <ul class="flex center gap-3" aria-label="Primary Navigation">
+          {
+            menus.map((menu, index) => (
+              <li class="menu-item fs-sm fw-semi-bold text-accent-400">
+                <a href={menu.href} class="flex gap-1 decoration-none">
+                  <span class="text-accent-200">0{index + 1}. </span>
+                  <span class="text-accent-400">{menu.label}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <a
+          target="_blank"
+          href="https://github.com/dusmel"
+          class="button-github | flex center gap-1 button hide"
+          aria-hidden="true"
+          data-visible="mobile"
+          ><Icon icon="github" size="15" />
+          Github
+        </a>
+      </nav>
+      <div class="flex gap-4 center">
+        <a
+          target="_blank"
+          href="https://github.com/dusmel"
+          class="button-github | flex center gap-1 button"
+          data-visible="laptop"
+          ><Icon icon="github" size="15" />
+          Github
+        </a>
+        <div class="flex gap-2 bg-neutral-200 py-1 px-3 radius-flat">
+          <Icon
+            data-onclick="theme:light"
+            type="button"
+            icon="light"
+            size="18"
+            color="var(--color-neutral-600)"
+          />
+          <Icon
+            data-onclick="theme:dark"
+            type="button"
+            icon="dark"
+            size="18"
+            color="var(--color-neutral-600)"
+          />
+        </div>
+      </div>
+
+      <div class="mobile-nav-toggle | hide">
         <Icon
-          data-onclick="light"
+          icon="menu"
+          size="30"
+          data-onclick="nav:open"
           type="button"
-          icon="light"
-          size="18"
+          aria-controls="primary-navigation"
           color="var(--color-neutral-600)"
+          aria-expanded="false"
+          aria-hidden="true"
         />
         <Icon
-          data-onclick="dark"
+          icon="close"
+          size="30"
+          class:list={["hide"]}
+          data-onclick="nav:close"
           type="button"
-          icon="dark"
-          size="18"
+          aria-controls="primary-navigation"
           color="var(--color-neutral-600)"
+          aria-expanded="true"
+          aria-hidden="true"
         />
       </div>
     </div>
   </div>
 </div>
 
-<style>
+<style lang="scss">
+  @use "../style/variables/mixins" as *;
+  @use "../style/variables/functions" as *;
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba(var(--color-primary-700) / 15);
+    backdrop-filter: blur(8px);
+  }
+
   .button-github {
     line-height: 0;
     padding-block: 0.35rem;
-  }
-  nav a {
-    --font-size: var(--fs-500);
-    text-decoration: none;
-    font-size: var(--font-size);
-    font-weight: var(--fw-bold);
-  }
-  .nav-items {
-  }
-  .menu ul {
-    list-style: none;
-    gap: var(--gap-8);
-  }
-
-  .menu-item a {
-    font-size: var(--fs-300);
-  }
-  .menu-item-number {
-    font-size: var(--fs-200);
-    color: #ba90c6;
   }
 
   ul {
     list-style: none;
   }
+
+  .overlay[data-visible] {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+  }
+
+  @include screen(mobile-tablet) {
+    .primary-navigation {
+      display: none;
+    }
+    .mobile-nav-toggle {
+      display: block;
+    }
+
+    a[data-visible="laptop"] {
+      display: none;
+    }
+
+    nav[data-visible] {
+      display: block;
+      position: fixed;
+      inset: size(11) size(4) auto;
+      padding-block: size(8);
+      border-radius: size(1);
+      background-color: #162447;
+      box-shadow: 0 0 1.2em 0.2em rgba(0, 0, 0, 0.1);
+      z-index: 10;
+
+      a[data-visible="mobile"] {
+        display: flex;
+        width: fit-content;
+        margin: size(6) auto 0;
+      }
+
+      @include theme(light) {
+        background-color: #eee;
+      }
+
+      ul {
+        flex-direction: column;
+        gap: size(6);
+      }
+    }
+  }
 </style>
 
 <script>
+  const primaryNav = document.querySelector(".primary-navigation");
   const buttons = document.querySelectorAll("[data-onclick]");
+  const overlay = document.querySelector(".overlay");
+  const navOpenButton = document.querySelector(
+    'button[data-onclick="nav:open"]'
+  );
+  const navCloseButton = document.querySelector(
+    'button[data-onclick="nav:close"]'
+  );
+
+  const closeNavPopup = () => {
+    navOpenButton?.classList.remove("hide");
+    navCloseButton?.classList.add("hide");
+    primaryNav?.removeAttribute("data-visible");
+    overlay?.removeAttribute("data-visible");
+  };
+
   buttons.forEach((button) => {
     button?.addEventListener("click", () => {
-      const mode = button.getAttribute("data-onclick") as "light" | "dark";
-      const htmlNode = document.querySelector("html[data-theme]");
-      htmlNode?.setAttribute("data-theme", mode);
+      const action = button.getAttribute("data-onclick")?.split(":");
+
+      // handle theme switching
+      if (action?.[0] === "theme") {
+        const mode = action?.[1] as "light" | "dark";
+        const htmlNode = document.querySelector("html[data-theme]");
+        htmlNode?.setAttribute("data-theme", mode);
+      }
+
+      // handle toggling navigation
+      if (action?.[0] === "nav") {
+        const actionType = action?.[1] as "open" | "close";
+
+        if (actionType === "open") {
+          navOpenButton?.classList.add("hide");
+          navCloseButton?.classList.remove("hide");
+          primaryNav?.setAttribute("data-visible", "");
+          overlay?.setAttribute("data-visible", "");
+        }
+
+        if (actionType === "close") {
+          console.log('here ', 'clicked')
+          closeNavPopup();
+        }
+      }
     });
+  });
+
+  overlay?.addEventListener("click", () => {
+    if (primaryNav?.getAttribute("data-visible") === "") closeNavPopup();
   });
 </script>

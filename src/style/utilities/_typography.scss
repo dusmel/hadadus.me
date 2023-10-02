@@ -18,6 +18,10 @@
   text-align: center;
 }
 
+.decoration-none {
+  text-decoration: none;
+}
+
 $lines: 1, 2, 3, 4, 5, 6;
 
 @each $line in $lines {

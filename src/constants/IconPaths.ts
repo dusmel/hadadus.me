@@ -10,7 +10,9 @@
  * 6. Replace any `fill="#000000"` attributes with `stroke="none"`
  *    (or add `stroke="none"` on shapes with no `fill` or `stroke` specified).
  */
-import terminal from "@assets/icons/terminal.svg?raw";
+import terminal from "@assets/icons/icon-terminal.svg?raw";
+import menu from "@assets/icons/icon-menu.svg?raw";
+import close from "@assets/icons/icon-close.svg?raw";
 import holder from "@assets/icons/icon-default.svg?raw";
 import link from "@assets/icons/logo-link-chain-solid.svg?raw";
 import persona from "@assets/persona.svg?raw";
@@ -44,6 +46,8 @@ import rack from "@assets/icons/logo-rack.svg?raw";
 
 export const iconPaths = {
   terminal,
+  menu,
+  close,
   'default': holder,
   persona,
   link,

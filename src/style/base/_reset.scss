@@ -28,6 +28,7 @@ html:focus-within {
 html,
 body {
   min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 /* Set core body defaults */

@@ -1,0 +1,23 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg fill="currentColor" width="{{size}}" height="{{size}}" viewBox="0 0 24 24" id="down-junction-sign" data-name="Flat Color"
+  xmlns="http://www.w3.org/2000/svg" class="icon flat-color">
+
+  <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+  <g id="SVGRepo_iconCarrier">
+
+    <path id="secondary"
+      d="M7,3A1,1,0,0,1,8,2h8a1,1,0,0,1,0,2H8A1,1,0,0,1,7,3ZM20,4h1a1,1,0,0,0,0-2H20a1,1,0,0,0,0,2ZM4,6H3A1,1,0,0,0,3,8H4A1,1,0,0,0,4,6ZM4,2H3A1,1,0,0,0,3,4H4A1,1,0,0,0,4,2ZM21,6H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Z"
+      style="fill: currentColor;" />
+
+    <path id="primary"
+      d="M17,14H15V8h1a1,1,0,0,0,0-2H8A1,1,0,0,0,8,8H9v6H7a1,1,0,0,0-.77,1.64l4.23,5.08a2,2,0,0,0,3.08,0l4.23-5.08A1,1,0,0,0,17,14Z"
+      style="fill: currentColor;" />
+
+  </g>
+
+</svg>

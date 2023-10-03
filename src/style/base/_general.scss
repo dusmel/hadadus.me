@@ -20,10 +20,6 @@ a {
   text-decoration: none;
 }
 
-a.underline {
-  border-bottom: none;
-  border-bottom: 1px solid $link-color;
-}
 
 a:is(:hover, :focus) {
   color: $link-color-hover;

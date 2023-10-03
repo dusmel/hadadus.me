@@ -1,31 +1,49 @@
 ---
 import { getCollection, getEntry } from "astro:content";
+import Icon from "./common/Icon.astro";
 
-const experiences = await getCollection("experience");
+const allExperiences = await getCollection("experience");
+const experiences = allExperiences.sort(
+  (a, b) => a.data.sortOrder - b.data.sortOrder
+);
 ---
 
-<section id="experience" class="mb-10 pt-11 section-glow">
-  <h2 class="fade mb-8">Experience</h2>
+<section id="experience" class="mt-14 mb-10 pt-11 section-glow">
+  <div class="header | mb-8">
+    <h2 class="fade">Experience</h2>
+    <p class="fs-xs text-neutral-500">
+      These are some of the work I did worth highlighting
+    </p>
+  </div>
   <div class="card-container | flex wrap gap-12">
     {
       experiences.map(({ data }) => (
         <div class="experience-card | card-glow p-4">
           <div class="card-header | flex align-center justify-between mb-2">
             <h5 class="fs-xs">{data.title}</h5>
-            <span class="fs-xxs fw-semi-bold text-neutral-500">{data.date}</span>
+            <span class="fs-xxs fw-semi-bold text-neutral-500">
+              {data.date}
+            </span>
           </div>
           <ul>
             {data.description?.map((jobDescritop) => (
               <li class="">{jobDescritop}</li>
             ))}
           </ul>
+          <div class="flex fs-xs fw-semi-bold gap-2 mt-2">
+            {data.link?.map(([title, link]) => (
+              <a target="_blank" href={link} class="flex underline">
+                {title} <Icon icon="externalLink" size="15" />
+              </a>
+            ))}
+          </div>
         </div>
       ))
     }
   </div>
-  <div class="flex center pt-10 pb-13">
+  <!-- <div class="flex center pb-13">
     <button>Check more</button>
-  </div>
+  </div> -->
 </section>
 
 <style lang="scss">
@@ -38,7 +56,7 @@ const experiences = await getCollection("experience");
     }
   }
 
-  .card-container{
+  .card-container {
     @include screen(mobile-tablet) {
       gap: size(6);
     }
@@ -48,15 +66,17 @@ const experiences = await getCollection("experience");
     width: 45%;
     @include screen(mobile-tablet) {
       width: 100%;
-      .card-header{
+      .card-header {
         flex-wrap: wrap;
       }
     }
   }
 
-  p,
-  li {
-    font-size: small;
-    margin-left: 1rem;
+  .experience-card {
+    p,
+    li {
+      font-size: small;
+      margin-left: 1rem;
+    }
   }
 </style>

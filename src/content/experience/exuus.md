@@ -1,9 +1,9 @@
 ---
 title: Senior software engineer/ Head of engineering - Exuus
-link: Exuus/Save [getsave.io]
+link: [["save", "https://getsave.io/"]]
 date: March 2020 - September 2023
 description: 
-  - Lead the engineering team.
+  - Led the engineering team.
   - Created a cli app for automating devops related processes, making  dev experience more enjoyable.
   - Worked on the major revamping of both the dashboard and mobile app.
   - Helped to create a dedicated company-wide documentation on notion, that came to be used by all the teams not just the engineering team. Also worked on a guideline that streamlined all in-house processes.
@@ -13,6 +13,7 @@ tags:
   - React/ React Native
   - jsx
   - cli - enquier, ...
+sortOrder: 1
 
 ---
 

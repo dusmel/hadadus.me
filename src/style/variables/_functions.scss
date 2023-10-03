@@ -3,7 +3,6 @@
 
 
 @function size($size) {
-  @debug "getting here";
   @if map.has-key($sizes, $size) {
     @return map.get($sizes, $size);
   } @else {

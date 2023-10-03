@@ -3,21 +3,17 @@ import { getCollection, getEntry } from "astro:content";
 import Icon from "./common/Icon.astro";
 import { type iconPathsType } from "constants/IconPaths";
 
-
 const { data: skills } = await getEntry("skills", "2023");
 
 const getIconName = (name: string): iconPathsType => {
   const formattedName = name?.toLowerCase()?.replaceAll(/\/|\s/g, "-");
   return (formattedName || "js") as iconPathsType;
-}
-
+};
 ---
 
-<section  id="skills" class="mb-10 pt-11 section-glow">
+<section id="skills" class="mb-10 pt-11 section-glow">
   <h2 class="fade inline-block">Skills</h2>
-  <p class="fs-xs text-neutral-500 mb-6">
-   
-  </p>
+  <p class="fs-xs text-neutral-500 mb-6"></p>
 
   <div class="flow flow-normal">
     {
@@ -35,6 +31,12 @@ const getIconName = (name: string): iconPathsType => {
         </div>
       ))
     }
+  </div>
+
+  <div class="flex center mt-10">
+    <a target="_blank" href="https://docs.google.com/presentation/d/1cLslzP-80ckfdujeGVqAtGuy4MHQXL_d/view#slide=id.p2" class="button"
+      >Check more</a
+    >
   </div>
 </section>
 

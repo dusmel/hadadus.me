@@ -1,15 +1,16 @@
 ---
-title: Senior Software engineer  Consultant** - Alfatier
-link: Alfatier [getsave.io]
+title: Senior Software engineer  Consultant** - COA  (Alfatier)
+link: [["codeofafrica", "https://www.codeofafrica.com/EN"], ["Alfatier", "https://alfatier.io/"]]
 date: March 2020 - September 2023
 description: 
-  - I worked addressing performance issues given how sensitive the performance budget was. Mainly reducing the app footprint and making sure it remains fast regardless of where it’s being accessed. ( Nextjs, material UI, Docker, ant design )
-  - Was in charge on setting up a state managment for the app ( we used redux toolkit with typescript for this)
+  - I worked addressing performance issues on the job portal product, given how sensitive the performance budget was, reducing the app footprint and making sure it remains fast regardless of where it’s being accessed was a priority. ( Nextjs, material UI, Docker, ant design )
+  - Was in charge on setting up a state management for the app ( we used redux toolkit with typescript for this)
 tags:
   - Node/express
   - React/ React Native
   - jsx
   - cli - enquier, ...
+sortOrder: 4
 
 ---
 

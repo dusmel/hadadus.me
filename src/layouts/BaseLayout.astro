@@ -22,16 +22,10 @@ const {
     <Head title={title} description={description} />
   </head>
   <body >
-    <div class="container">
+    <div class="container container-narrow">
       <Nav />
       <slot />
     </div>
     <Footer />
   </body>
 </html>
-
-<style>
-  html {
-    min-width: 100%;
-  }
-</style>

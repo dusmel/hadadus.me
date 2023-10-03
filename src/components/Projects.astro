@@ -10,7 +10,7 @@ const sortedProject = projects.sort(
 
 <section id="projects" class="mb-13 pt-11 section-glow">
   <h2 class="fade">Projects</h2>
-  <p>I've hacked around few things worth looking at</p>
+  <p class="text-neutral-500">I've hacked around few things worth looking at</p>
 
   <div class="card-container | flex wrap gap-10 mt-8">
     {
@@ -40,7 +40,7 @@ const sortedProject = projects.sort(
     }
   </div>
   <div class="flex center mt-10">
-    <button>Check more</button>
+    <a target="_blank" href="https://github.com/dusmel" class="button">Check more</a>
   </div>
 </section>
 
@@ -52,6 +52,7 @@ const sortedProject = projects.sort(
 
   section {
     @include mixins.screen(mobile-tablet) {
+      margin-top: size(13);
       margin-bottom: size(10);
     }
   }
@@ -64,10 +65,6 @@ const sortedProject = projects.sort(
 
   .project-card {
     width: 100%;
-    // border: 1px solid grey;
-    // border-top: 3px solid var(--color-accent-700);
-    // border-radius: 5px;
-
     h4 {
       font-size: 1.2rem;
     }
@@ -96,8 +93,3 @@ const sortedProject = projects.sort(
     list-style: none;
   }
 </style>
-
-<!--  TODO: add illustration above
- - card background like gitness
- - on hover header color to accent
- - something about border and glow -->

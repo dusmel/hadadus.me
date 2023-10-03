@@ -49,12 +49,13 @@ import mail from "@assets/icons/icon-mail.svg?raw";
 import twitter from "@assets/icons/logo-twitter.svg?raw";
 import linkedin from "@assets/icons/logo-linkedin.svg?raw";
 import calendar from "@assets/icons/logo-calendar.svg?raw";
+import arrowDown from "@assets/icons/icon-arrow-down-2.svg?raw";
 
 export const iconPaths = {
   terminal,
   menu,
   close,
-  'default': holder,
+  default: holder,
   persona,
   link,
   externalLink,
@@ -90,7 +91,8 @@ export const iconPaths = {
   mail,
   twitter,
   linkedin,
-  calendar
+  calendar,
+  arrowDown,
 };
 
 export type iconPathsType = keyof typeof iconPaths;

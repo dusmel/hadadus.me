@@ -3,12 +3,13 @@ const experienceCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    link: z.string(),
+    link: z.array(z.array(z.string())).optional(),
     date: z.string(),
     description: z.array(z.string()),
     image: z.string().optional(),
     ps: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    sortOrder: z.number(),
   }),
 });
 

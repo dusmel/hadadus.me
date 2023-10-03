@@ -22,6 +22,11 @@
   text-decoration: none;
 }
 
+.underline {
+  text-decoration: underline;
+  text-underline-offset: .25rem;
+}
+
 $lines: 1, 2, 3, 4, 5, 6;
 
 @each $line in $lines {

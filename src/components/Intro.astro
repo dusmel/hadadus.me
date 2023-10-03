@@ -11,12 +11,12 @@ import Icon from "@components/common/Icon.astro";
         </span>
 
         A software <span class="highlight">person</span> with a passion for translating
-        instructions to computers. If you are up for it let’s build a better, kind and more connected future together. Welcome to my digital realm!
-        ✨ 🚀
-        <br>
+        instructions to computers. If you are up for it let’s build a better, kind
+        and more connected future together. Welcome to my digital realm! ✨ 🚀
+        <br />
         <span class="">▷ This is the way.</span>
       </p>
-      <div class="flex gap-4">
+      <div class="action-buttons | flex gap-4">
         <a target="_blank" href="https://cal.com/hadad" class="button"
           >Let's talk</a
         >
@@ -37,6 +37,11 @@ import Icon from "@components/common/Icon.astro";
       <!-- <img src={Personna.src} alt=""> -->
     </div>
   </div>
+  <div class="arrow-direction">
+    <a href="#experience">
+      <Icon icon="arrowDown" size="35" color="var(--color-neutral-500)" />
+    </a>
+  </div>
 </section>
 
 <style is:global lang="scss">
@@ -47,6 +52,10 @@ import Icon from "@components/common/Icon.astro";
     min-height: calc(100vh - 200px);
     @include screen(mobile) {
       padding-top: size(14);
+      margin-top: size(10);
+      .action-buttons a {
+        font-size: large;
+      }
     }
   }
 
@@ -71,7 +80,6 @@ import Icon from "@components/common/Icon.astro";
   }
 
   /* text animation */
-
   @keyframes animated-text-mobile {
     from {
       width: 0;
@@ -89,7 +97,6 @@ import Icon from "@components/common/Icon.astro";
     }
   }
   /* cursor animations */
-
   @keyframes animated-cursor {
     from {
       border-right-color: var(--color-neutral-800);
@@ -98,16 +105,37 @@ import Icon from "@components/common/Icon.astro";
       border-right-color: transparent;
     }
   }
+  @keyframes blink {
+    from {
+      border: var(--color-neutral-500);
+      color: var(--color-neutral-500);
+    }
+    to {
+      border: transparent;
+      color: transparent;
+    }
+  }
 
   .illustration-container {
     position: relative;
-    // margin-bottom: 25rem;
     svg {
       position: absolute;
       z-index: -1;
       inset: -140px auto;
     }
+
+    @include screen(mobile) {
+      display: none;
+    }
+  }
+
+  .arrow-direction {
+    position: absolute;
+    bottom: 2%;
+    left: 45%;
+    z-index: 2;
+    a {
+      animation: blink 1s linear infinite;
+    }
   }
 </style>
-
-<script></script>

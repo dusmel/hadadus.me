@@ -10,21 +10,21 @@ const menus: { label: string; href: string }[] = [
 ---
 
 <div class="header py-4">
-  <div class="container">
+  <div class="container container-narrow">
     <div  aria-hidden="true" aria-label="overlay" class="overlay" />
     <div class="flex justify-between">
-      <a href="#" class="site-title | flex center gap-1 decoration-none underline">
+      <a href="#" class="site-title | flex center gap-1 decoration-none">
         <Icon icon="terminal" color="white" size="18px" />
-        <span class="fw-semi-bold text-accent-400">Hadad Dus</span>
+        <span class="fw-semi-bold">Hadad Dus</span>
       </a>
       <nav class="primary-navigation" id="primary-navigation">
-        <ul class="flex center gap-3" aria-label="Primary Navigation">
+        <ul class="flex center gap-4" aria-label="Primary Navigation">
           {
             menus.map((menu, index) => (
               <li class="menu-item fs-sm fw-semi-bold text-accent-400">
                 <a href={menu.href} class="flex gap-1 decoration-none ">
                   <span class="text-accent-200">0{index + 1}. </span>
-                  <span class="text-accent-400">{menu.label}</span>
+                  <span>{menu.label}</span>
                 </a>
               </li>
             ))
@@ -106,7 +106,13 @@ const menus: { label: string; href: string }[] = [
     z-index: 10;
     background-color: rgba(var(--color-primary-700) / 15);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
+
+  .site-title{
+    border-bottom: 1px solid var(--color-accent-400);
+  }
+
 
   .button-github {
     line-height: 0;

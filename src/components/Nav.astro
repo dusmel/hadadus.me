@@ -13,7 +13,7 @@ const menus: { label: string; href: string }[] = [
   <div class="container">
     <div  aria-hidden="true" aria-label="overlay" class="overlay" />
     <div class="flex justify-between">
-      <a href="#" class="site-title | flex center gap-1 decoration-none">
+      <a href="#" class="site-title | flex center gap-1 decoration-none underline">
         <Icon icon="terminal" color="white" size="18px" />
         <span class="fw-semi-bold text-accent-400">Hadad Dus</span>
       </a>
@@ -22,7 +22,7 @@ const menus: { label: string; href: string }[] = [
           {
             menus.map((menu, index) => (
               <li class="menu-item fs-sm fw-semi-bold text-accent-400">
-                <a href={menu.href} class="flex gap-1 decoration-none">
+                <a href={menu.href} class="flex gap-1 decoration-none ">
                   <span class="text-accent-200">0{index + 1}. </span>
                   <span class="text-accent-400">{menu.label}</span>
                 </a>

@@ -15,6 +15,8 @@ import menu from "@assets/icons/icon-menu.svg?raw";
 import close from "@assets/icons/icon-close.svg?raw";
 import holder from "@assets/icons/icon-default.svg?raw";
 import link from "@assets/icons/logo-link-chain-solid.svg?raw";
+import externalLink from "@assets/icons/icon-external-link.svg?raw";
+import externalLinkSolid from "@assets/icons/icon-external-link-solid.svg?raw";
 import persona from "@assets/persona.svg?raw";
 import light from "@assets/icons/icon-light-filled-1.svg?raw";
 import dark from "@assets/icons/icon-dark.svg?raw";
@@ -43,6 +45,10 @@ import test from "@assets/icons/logo-test.svg?raw";
 import database from "@assets/icons/icon-database.svg?raw";
 import redis from "@assets/icons/logo-redis.svg?raw";
 import rack from "@assets/icons/logo-rack.svg?raw";
+import mail from "@assets/icons/icon-mail.svg?raw";
+import twitter from "@assets/icons/logo-twitter.svg?raw";
+import linkedin from "@assets/icons/logo-linkedin.svg?raw";
+import calendar from "@assets/icons/logo-calendar.svg?raw";
 
 export const iconPaths = {
   terminal,
@@ -51,6 +57,8 @@ export const iconPaths = {
   'default': holder,
   persona,
   link,
+  externalLink,
+  externalLinkSolid,
   light,
   dark,
   github,
@@ -78,7 +86,11 @@ export const iconPaths = {
   postgres: database,
   mysql: database,
   redis,
-  rack
+  rack,
+  mail,
+  twitter,
+  linkedin,
+  calendar
 };
 
 export type iconPathsType = keyof typeof iconPaths;

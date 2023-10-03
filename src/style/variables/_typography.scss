@@ -26,6 +26,7 @@ $fw-semi-bold: 500;
 $fw-bold: 700;
 
 // ==== font size ========
+$fs-xxs: 0.6rem;
 $fs-xs: 0.75rem;
 $fs-sm: 0.875rem;
 $fs-regular: 1rem;
@@ -42,6 +43,7 @@ $fs-button: $fs-xs;
 
 // used for generating utility classes
 $font-sizes: (
+  xxs: $fs-xxs,
   xs: $fs-xs,
   sm: $fs-sm,
   regular: $fs-regular,

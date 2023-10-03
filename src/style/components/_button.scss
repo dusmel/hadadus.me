@@ -1,11 +1,13 @@
 @use "../variables/shadow" as *;
 @use "../variables/functions" as *;
 @use "../variables/typography" as *;
+@use "../variables/colors" as *;
 @use "../variables/mixins";
 
-button, .button{
+button,
+.button {
   display: inline-block;
-  padding:  size(1) size(4);
+  padding: size(1) size(4);
   border-radius: 0.3rem;
   font-size: $fs-xs;
   font-weight: $fw-semi-bold;
@@ -38,4 +40,10 @@ button[data-type="flat"] {
     background-image: transparent;
     border: none;
   }
+}
+
+button:is(:hover, :focus),
+.button:is(:hover, :focus) {
+  color: var(--color-neutral-900);
+  opacity: .7;
 }

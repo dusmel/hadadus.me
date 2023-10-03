@@ -1,27 +1,32 @@
 ---
-import { Image } from "astro:assets";
-import Personna from "@assets/persona.svg";
-import SVG from "./SVG.astro";
 import Icon from "@components/common/Icon.astro";
-import link from "@assets/icons/logo-link-chain-solid.svg?raw";
 ---
 
 <section class="section-intro | pt-15">
   <div class="even-columns">
-    <div class="intro flow">
+    <div class="intro flow flow-large">
       <p>
-        Hi, I'm Hadad ✋🏼 a software Mentat with a passion for translating
-        instructions to computers. If you are up for it let’s build a kind,
-        smarter, faster, and more connected future together. Welcome to my
-        digital realm! ✨ 🚀
-        <span class="pl-4">▷ This is the way.</span>
+        <span class="intro | fw-semi-bold fs-2xl flex gap-3 mb-2">
+          Hi, I'm <span class="animated-name">Hadad ✋🏼</span>
+        </span>
+
+        A software <span class="highlight">person</span> with a passion for translating
+        instructions to computers. If you are up for it let’s build a better, kind and more connected future together. Welcome to my digital realm!
+        ✨ 🚀
+        <br>
+        <span class="">▷ This is the way.</span>
       </p>
-      <div class="flex">
-        <button>Let's talk</button>
-        <a href="_blank" class="flex center gap-1"
+      <div class="flex gap-4">
+        <a target="_blank" href="https://cal.com/hadad" class="button"
+          >Let's talk</a
+        >
+        <a
+          target="_blank"
+          href="https://bit.ly/hadad-cv"
+          class="flex center gap-1 fw-semi-bold highlight-accent decoration-none fs-sm"
           >Resume <Icon
             icon="link"
-            size="14"
+            size="10"
             data-class="main-illustration"
           /></a
         >
@@ -35,9 +40,65 @@ import link from "@assets/icons/logo-link-chain-solid.svg?raw";
 </section>
 
 <style is:global lang="scss">
+  @use "../style/variables/mixins" as *;
+  @use "../style/variables/functions" as *;
+
   .section-intro {
     min-height: calc(100vh - 200px);
+    @include screen(mobile) {
+      padding-top: size(14);
+    }
   }
+
+  // typing effect animation
+  span.intro {
+    .animated-name {
+      border-right: solid 5px rgba(255, 255, 255, 0.75);
+      white-space: nowrap;
+      overflow: hidden;
+      color: #ff7f50;
+
+      animation: animated-text 2s linear 1s 1 normal both,
+        animated-cursor 1s linear infinite;
+    }
+    @include screen(mobile) {
+      font-size: 2.3rem;
+      .animated-name {
+        animation: animated-text-mobile 2s linear 1s 1 normal both,
+          animated-cursor 1s linear infinite;
+      }
+    }
+  }
+
+  /* text animation */
+
+  @keyframes animated-text-mobile {
+    from {
+      width: 0;
+    }
+    to {
+      width: 175px;
+    }
+  }
+  @keyframes animated-text {
+    from {
+      width: 0;
+    }
+    to {
+      width: 270px;
+    }
+  }
+  /* cursor animations */
+
+  @keyframes animated-cursor {
+    from {
+      border-right-color: var(--color-neutral-800);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+
   .illustration-container {
     position: relative;
     // margin-bottom: 25rem;
@@ -48,3 +109,5 @@ import link from "@assets/icons/logo-link-chain-solid.svg?raw";
     }
   }
 </style>
+
+<script></script>

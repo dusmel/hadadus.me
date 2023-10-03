@@ -1,4 +1,7 @@
 ---
+import Icon from "./common/Icon.astro";
+import { type iconPathsType } from "constants/IconPaths";
+
 // const contactInfo =
 type socialType = {
   social: "github" | "twitter" | "linkedin" | "calendar" | "resume";
@@ -6,15 +9,15 @@ type socialType = {
   link: string;
 };
 const socials: socialType[] = [
-  { social: "github", username: "dusmel", link: "https://github.com/dusmel" },
+  { social: "github", username: "@dusmel", link: "https://github.com/dusmel" },
   {
     social: "twitter",
-    username: "hadad__",
+    username: "@hadad__",
     link: "https://twitter.com/hadad__",
   },
   {
     social: "linkedin",
-    username: "hadad bwenge",
+    username: "@hadad bwenge",
     link: "https://www.linkedin.com/in/hadad-bwenge-345ba7103/",
   },
   {
@@ -30,23 +33,29 @@ const socials: socialType[] = [
 ];
 ---
 
-<section  id="contact" class="mt-10 pt-11 section-glow">
-  <h3 class="fade" style="--fade-starter: 90%">Contact - Socials</h3>
+<section id="contact" class="mt-10 pt-11 section-glow">
+  <h3 class="fade mb-6" style="--fade-starter: 90%">Contact - Socials</h3>
   <div class="fs-xs fw-semi-bold flow" style="--flow-spacer: 1rem">
-    <div class="flex">
-      <span> :icon Email:</span>
-      <span> hadad.bwenge@gmail.com</span>
-      <a href="mailto:hadad.bwenge@gmail.com?subject=Let’s connect!"
-        >CONTACT ME</a
-      >
-    </div>
     {
       socials.map(({ social, username, link }) => (
         <div class="socials | flex gap-3">
-          <span> :icon {social}:</span>
-          <a href={link}>{username} :icon</a>
+          <span class="flex gap-2">
+            <Icon icon={social as iconPathsType} size="16" /> {social}:
+          </span>
+          <a href={link} target="_blank" class="flex">
+            {username} <Icon icon="externalLink" size="15" />
+          </a>
         </div>
       ))
     }
+    <div class="flex gap-2">
+      <span class="flex gap-2"> <Icon icon="mail" size="16" /> Email:</span>
+      <span> hadad.bwenge@gmail.com</span>
+      <a
+        class="button fs-xxs"
+        href="mailto:hadad.bwenge@gmail.com?subject=Let’s connect!"
+        >CONTACT ME</a
+      >
+    </div>
   </div>
 </section>

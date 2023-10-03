@@ -6,17 +6,17 @@ const experiences = await getCollection("experience");
 
 <section id="experience" class="mb-10 pt-11 section-glow">
   <h2 class="fade mb-8">Experience</h2>
-  <div class="flex wrap gap-12">
+  <div class="card-container | flex wrap gap-12">
     {
       experiences.map(({ data }) => (
-        <div class="experience-card card-glow p-4">
-          <div class="flex">
-            <h5>{data.title}</h5>
-            <span>{data.date}</span>
+        <div class="experience-card | card-glow p-4">
+          <div class="card-header | flex align-center justify-between mb-2">
+            <h5 class="fs-xs">{data.title}</h5>
+            <span class="fs-xxs fw-semi-bold text-neutral-500">{data.date}</span>
           </div>
           <ul>
             {data.description?.map((jobDescritop) => (
-              <li>{jobDescritop}</li>
+              <li class="">{jobDescritop}</li>
             ))}
           </ul>
         </div>
@@ -30,11 +30,27 @@ const experiences = await getCollection("experience");
 
 <style lang="scss">
   @use "../style/variables/mixins" as *;
+  @use "../style/variables/functions" as *;
+
+  section {
+    @include screen(mobile-tablet) {
+      margin-bottom: -4rem;
+    }
+  }
+
+  .card-container{
+    @include screen(mobile-tablet) {
+      gap: size(6);
+    }
+  }
 
   .experience-card {
-    width: 100%;
-    @include screen(laptop) {
-      width: 45%;
+    width: 45%;
+    @include screen(mobile-tablet) {
+      width: 100%;
+      .card-header{
+        flex-wrap: wrap;
+      }
     }
   }
 

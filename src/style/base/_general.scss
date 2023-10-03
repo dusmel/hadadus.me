@@ -17,8 +17,15 @@ $link-color-hover: $color-accent-700;
 
 a {
   color: $link-color;
+  text-decoration: none;
+}
+
+a.underline {
+  border-bottom: none;
+  border-bottom: 1px solid $link-color;
 }
 
 a:is(:hover, :focus) {
   color: $link-color-hover;
+  border-color: $link-color-hover;
 }

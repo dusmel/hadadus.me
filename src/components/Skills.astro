@@ -15,9 +15,8 @@ const getIconName = (name: string): iconPathsType => {
 
 <section  id="skills" class="mb-10 pt-11 section-glow">
   <h2 class="fade inline-block">Skills</h2>
-  <p class="fs-xs text-neutral-500 mb-8">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quis
-    minima molestias, blanditiis,
+  <p class="fs-xs text-neutral-500 mb-6">
+   
   </p>
 
   <div class="flow flow-normal">
@@ -25,7 +24,7 @@ const getIconName = (name: string): iconPathsType => {
       Object.keys(skills).map((skill) => (
         <div>
           <h4>{skill}</h4>
-          <div class="flex fs-xs fw-semi-bold gap-4 wrap">
+          <div class="flex fs-xs fw-semi-bold gap-4 wrap mt-2">
             {skills[skill].map((name) => (
               <div class="flex gap-2 center tag">
                 <Icon icon={getIconName(name)} size="25" color="black" />

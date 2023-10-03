@@ -89,3 +89,17 @@ body {
     --shadow-color: var(--color-primary-200);
   }
 }
+
+.highlight {
+  padding: 0 size(3);
+  border-bottom: 2px solid rgba($color-primary-200, .7);
+  background-color: rgba($color-accent-200, .1);
+  line-height: unset;
+}
+
+.highlight-accent {
+  padding: 0 size(3);
+  border-bottom: 2px solid rgba($color-accent-200, .7);
+  background-color: rgba($color-accent-200, .1);
+  line-height: unset;
+}

@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
+import Icon from "./common/Icon.astro";
 
 const projects = await getCollection("projects");
 const sortedProject = projects.sort(
@@ -11,20 +12,20 @@ const sortedProject = projects.sort(
   <h2 class="fade">Projects</h2>
   <p>I've hacked around few things worth looking at</p>
 
-  <div class="flex wrap gap-10 mt-8">
+  <div class="card-container | flex wrap gap-10 mt-8">
     {
       sortedProject.map(({ data }) => (
         <div class="project-card | pt-3 card-glow">
-          <div class="flex justify-between  px-3">
-            <h4>{data.title}</h4>
-            <span>:icon-link</span>
-          </div>
+          <a href={data.link} target="_blank" class="flex justify-between  px-3">
+            <h4 class="text-neutral-500">{data.title}</h4>
+            <Icon icon="externalLinkSolid" size="20" color="var(--color-accent-400)" />
+          </a>
           <p class="description | my-5  px-3 line-clamp-3">
             {data.description}
           </p>
           <div class="card-footer | flex gap-3 bg-neutral-100 py-1 px-3">
-            <a href={data.link} class="flex">
-              <span>:icon-github</span>
+            <a href={data.link} class="flex center gap-1">
+              <Icon icon="github" size="15" />
               Github
             </a>
             <span>|</span>
@@ -46,6 +47,20 @@ const sortedProject = projects.sort(
 <style lang="scss">
   // this is only used to add media query for laptop specific styles
   @use "../style/variables/mixins";
+  @use "../style/variables/functions" as *;
+
+
+  section {
+    @include mixins.screen(mobile-tablet) {
+      margin-bottom: size(10);
+    }
+  }
+
+  .card-container{
+    @include mixins.screen(mobile-tablet) {
+      gap: size(6);
+    }
+  }
 
   .project-card {
     width: 100%;

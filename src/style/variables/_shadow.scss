@@ -13,28 +13,8 @@ $background--gradient-light: linear-gradient(
   $color-neutral-100 102%
 );
 
-$gradient-accent: linear-gradient(
-  135deg,
-  rgba($color-accent-400, 0.5) 2.3%,
-  $color-accent-200 40.2%
-);
 
-$accent-colorful-gradient: linear-gradient(
-  45deg,
-  $color-accent-200,
-  #da62c4 30%,
-  white 60%
-);
-$background-image-temp: linear-gradient(
-  109.6deg,
-  rgba(15, 2, 2, 1) 65.2%,
-  rgba(36, 163, 190, 1) 93.1%
-);
-$background-image-light: radial-gradient(
-  circle farthest-corner at 50% 30%,
-  rgba($color-neutral-200, 0.6) 5%,
-  $color-neutral-100 50%
-);
+
 
 $background-image-light-1: radial-gradient(
   circle farthest-corner at 50% 30%,
@@ -46,22 +26,8 @@ $background-image-temp1: radial-gradient(
     rgba(15, 32, 78, .6) 0.2%,
     rgb(6, 5, 36) 50%
   );
-$background-image-temp2: radial-gradient(
-  circle farthest-corner at 10% 20%,
-  rgba(100, 43, 115, 1) 0%,
-  rgba(4, 0, 4, 1) 90%
-);
 
 /* Shadows */
-$shadow-sm: 0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),
-  0px 2px 2px rgba(9, 11, 17, 0.02), 0px 0px 1px rgba(9, 11, 17, 0.03);
-$shadow-md: 0px 28px 11px rgba(9, 11, 17, 0.01),
-  0px 16px 10px rgba(9, 11, 17, 0.03), 0px 7px 7px rgba(9, 11, 17, 0.05),
-  0px 2px 4px rgba(9, 11, 17, 0.06);
-$shadow-lg: 0px 62px 25px rgba(9, 11, 17, 0.01),
-  0px 35px 21px rgba(9, 11, 17, 0.05), 0px 16px 16px rgba(9, 11, 17, 0.1),
-  0px 4px 9px rgba(9, 11, 17, 0.12);
-// $tw-shadow: var(--tw-shadow-colored);
 $shadow: 0 1px 3px 0 $color-accent-400, 0 1px 2px -1px $color-accent-400;
 $shadow-subtle: 0px 1px 10px 1px var(--color-neutral-500);
 $shadow-subtle-light: 0px 3px 20px 1px var(--color-neutral-300);

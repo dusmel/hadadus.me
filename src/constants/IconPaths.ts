@@ -1,14 +1,14 @@
 /**
- * Icons adapted from https://phosphoricons.com/
+ * Icons adapted from https://www.svgrepo.com/ and https://blendicons.com/
  *
  * Want to add more?
- * 1. Find the icon you want on Phosphor Icons.
- * 2. Click “Copy SVG”.
- * 3. Paste the SVG code in your editor.
- * 4. Remove the `<svg>` wrapper so you only have elements like `<path>`, `<circle>`, `<rect>` etc.
- * 5. Remove any `stroke="#000000"` attributes
- * 6. Replace any `fill="#000000"` attributes with `stroke="none"`
- *    (or add `stroke="none"` on shapes with no `fill` or `stroke` specified).
+ * 1. Find the icon you want on the above websites
+ * 2. Click “Copy SVG” or even download.
+ * 3. Create a file for that svg in the assets/icons folder and paste it there.
+ * 4. Change width and height values with {{size}} like width="{{size}}"
+ * 5. Do the same for colors fill="{{color}}" and sometimes stroke="{{color}}"
+ * 6. Or you can remove any `fill="#000000"`  or stroke. and it will inherit from the parent
+ * 7. import it in this file and you are good to go with type suggestion. 
  */
 import terminal from "@assets/icons/icon-terminal.svg?raw";
 import menu from "@assets/icons/icon-menu.svg?raw";

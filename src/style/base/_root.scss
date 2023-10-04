@@ -11,7 +11,7 @@
    @include set-theme-colors(colors.$light)
   }
   
-
+// ## this is if you want to get user preference from the os 
   // @if ($enable-media-query-dark-mode) {
   //   @media (prefers-color-scheme: dark) {
   //     @each $color, $shade-map in colors.$dark {

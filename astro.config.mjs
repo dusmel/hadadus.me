@@ -10,5 +10,6 @@ export default defineConfig({
       enabled: true,
     },
   }),
-  // integrations: [purgecss({ safelist: ['data-theme', /^data-/], })]
+  // # use the following when deploying a static website, it doesnt work for SSR for and serverless. Will fix it later
+  // integrations: [purgecss({ safelist: ['data-theme', /^data-/], })] 
 });

@@ -1,11 +1,4 @@
 // ==== font family ========
-// @font-face {
-//   font-family: "Alegreya SC";
-//   font-weight: 700;
-//   font-display: swap;
-//   src: url("/fonts/alegreyasc-bold-webfont.woff2") format("woff2"),
-//     url("/fonts/alegreyasc-bold-webfont.woff") format("woff");
-// }
 $-ff-sans: system-ui, sans-serif;
 $-ff-serif: serif;
 
@@ -79,25 +72,3 @@ h5 {
   font-size: $fs-sm;
 }
 
-// $font-sizes: (
-//   "small": (
-//     "900": 3.75rem,
-//     "800": 2.25rem,
-//     "700": 1.75rem,
-//     "600": 1.125rem,
-//     "500": 1.125rem,
-//     "400": 1rem,
-//     "300": 0.925rem,
-//     "200": 0.875rem,
-//   ),
-//   "large": (
-//     "900": 3.75rem,
-//     "800": 3rem,
-//     "700": 1.75rem,
-//     "600": 1.3125rem,
-//     "500": 1.125rem,
-//     "400": 1rem,
-//     "300": 0.925rem,
-//     "200": 0.875rem,
-//   ),
-// );

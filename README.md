@@ -9,8 +9,8 @@
 A personal website built with  [astro](https://astro.build/) and sass and no tailwind but something close 😉. [hadadus.me](https://hadadus.me)
 
 <br />
+<img width="1437" alt="screenshot" src="https://github.com/dusmel/hadadus.me/assets/27511264/a815b03e-a8ea-48af-8345-23105ec32fdf">
 
-![screenshot](https://github.com/dusmel/hadad.dev/assets/27511264/3f825bb1-d45b-4b45-a4c8-d7ea81bdb899)
 
 
 ## 🚀 Project Structure

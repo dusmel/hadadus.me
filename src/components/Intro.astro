@@ -2,8 +2,8 @@
 import Icon from "@components/common/Icon.astro";
 ---
 
-<section class="section-intro | pt-20">
-  <div class="even-columns">
+<section class="section-intro">
+<div class="even-columns">
     <div class="intro flow flow-large">
       <p>
         <span class="intro | fw-semi-bold fs-2xl flex gap-3 mb-2">
@@ -54,6 +54,10 @@ import Icon from "@components/common/Icon.astro";
       .action-buttons a {
         font-size: large;
       }
+    }
+
+    @include screen(laptop) {
+      padding-top: size(20);
     }
   }
 

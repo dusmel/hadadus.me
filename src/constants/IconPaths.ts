@@ -50,6 +50,8 @@ import twitter from "@assets/icons/logo-twitter.svg?raw";
 import linkedin from "@assets/icons/logo-linkedin.svg?raw";
 import calendar from "@assets/icons/logo-calendar.svg?raw";
 import arrowDown from "@assets/icons/icon-arrow-down-2.svg?raw";
+import avatar1 from "@assets/avatar-1.svg?raw";
+import avatar2 from "@assets/avatar-2.svg?raw";
 
 export const iconPaths = {
   terminal,
@@ -93,6 +95,8 @@ export const iconPaths = {
   linkedin,
   calendar,
   arrowDown,
+  avatar1,
+  avatar2,
 };
 
 export type iconPathsType = keyof typeof iconPaths;
